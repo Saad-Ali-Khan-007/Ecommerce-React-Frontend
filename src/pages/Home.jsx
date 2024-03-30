@@ -4,6 +4,7 @@ import Companies from "../components/companies/Companies";
 import NewArrivals from "../components/newArrivals/NewArrivals";
 import TopSelling from "../components/topSelling/TopSelling";
 import BrowseByCatogories from "../components/browseByCatogories/BrowseByCatogories";
+import Testemonials from "../components/testemonials/Testemonials";
 const Home = () => {
   return (
     <div>
@@ -12,6 +13,7 @@ const Home = () => {
       <NewArrivals />
       <TopSelling />
       <BrowseByCatogories />
+      <Testemonials />
     </div>
   );
 };

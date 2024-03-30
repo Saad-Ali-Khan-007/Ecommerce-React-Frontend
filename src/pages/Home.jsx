@@ -3,6 +3,7 @@ import HeroBanner from "../components/heroBanner/HeroBanner";
 import Companies from "../components/companies/Companies";
 import NewArrivals from "../components/newArrivals/NewArrivals";
 import TopSelling from "../components/topSelling/TopSelling";
+import BrowseByCatogories from "../components/browseByCatogories/BrowseByCatogories";
 const Home = () => {
   return (
     <div>
@@ -10,6 +11,7 @@ const Home = () => {
       <Companies />
       <NewArrivals />
       <TopSelling />
+      <BrowseByCatogories />
     </div>
   );
 };

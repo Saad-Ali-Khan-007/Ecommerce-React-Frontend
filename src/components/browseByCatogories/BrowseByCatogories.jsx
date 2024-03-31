@@ -6,8 +6,8 @@ import crockery from "../../assets/crockery.png";
 
 const BrowseByCatogories = () => {
   return (
-    <div className="m-auto flex flex-col max-md:flex-wrap max-w-[90%] pb-10 rounded-3xl bg-[#f0eeed] mt-16">
-      <h1 className="text-center font-aclonica font-extrabold text-[2rem] pt-10">
+    <div className="m-auto flex flex-col max-md:flex-wrap max-w-[90%] pb-10 rounded-3xl  bg-[#f0eeed] mt-16">
+      <h1 className="text-center font-extrabold text-[2rem] pt-10">
         BROWSE BY CATOGORIES
       </h1>
       <div className="flex flex-col max-md:flex-wrap  mt-10 m-auto max-w-[90%]">

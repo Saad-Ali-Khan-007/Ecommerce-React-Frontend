@@ -40,7 +40,7 @@ const Testemonials = () => {
     slidesToScroll: 1,
   };
   return (
-    <div className="mt-16 m-auto max-w-[90%] mb-8">
+    <div className="mt-16 m-auto max-w-[90%] max-sm:max-w-[85%] mb-8">
       <h1 className="pl-2 max-sm:text-[1.5rem] mb-8  font-aclonica font-extrabold text-[2rem]">
         Our Happy Customers
       </h1>

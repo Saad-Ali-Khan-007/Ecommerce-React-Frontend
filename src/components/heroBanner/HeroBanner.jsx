@@ -20,16 +20,16 @@ const HeroBanner = () => {
           </button>
         </div>
         <div className="flex w-[75%] items-center gap-4 justify-center max-md:flex-wrap mt-6">
-          <div className="flex flex-col items-center justify-center border-r-2 pr-3 max-md:border-r-0 mr-3">
+          <div className="flex flex-col max-md:items-center justify-center border-r-2 pr-3 max-md:border-r-0 mr-3">
             <h1 className="font-bold text-2xl">200+</h1>
             <p className=" text-gray-500">International Brands</p>
           </div>
-          <div className="border-r-2 flex flex-col items-center justify-center max-md:border-r-0 pr-3 mr-3">
+          <div className="border-r-2 flex flex-col max-md:items-center justify-center max-md:border-r-0 pr-3  mr-3">
             <h1 className="font-bold text-2xl">2,000+</h1>
             <p className=" text-gray-500">High-Quality Products</p>
           </div>
-          <div className="flex flex-col items-center justify-center">
-            <h1 className="font-bold flex flex-col items-center justify-center  text-2xl">
+          <div className="flex flex-col max-sm:mr-3 max-md:items-center justify-center">
+            <h1 className="font-bold  flex flex-col justify-center  text-2xl">
               30,000+
             </h1>
             <p className=" text-gray-500">Happy Customers</p>

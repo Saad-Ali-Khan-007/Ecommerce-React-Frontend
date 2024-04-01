@@ -1,5 +1,6 @@
 import React from "react";
 import tshirt from "../../assets/tshirt.png";
+import { Link } from "react-router-dom";
 
 const NewArrivals = () => {
   return (
@@ -9,14 +10,16 @@ const NewArrivals = () => {
       </h1>
       <div className="flex items-center   mt-16 flex-wrap justify-between m-auto max-w-[90%]">
         <div className="flex max-sm:w-[30rem] flex-col justify-center">
-          <div className="rounded-xl flex items-center justify-center bg-[#f0eeed]">
-            <img src={tshirt} alt="" />
-          </div>
-          <div>
-            <p className="text-gray-500">T-shirt with Tape Details</p>
-            <p className="text-gray-500">Rating 4.5/5</p>
-            <p className="text-gray-500 text-lg font-bold">$120</p>
-          </div>
+          <Link to="/product-detail/1">
+            <div className="rounded-xl flex items-center justify-center bg-[#f0eeed]">
+              <img src={tshirt} alt="" />
+            </div>
+            <div>
+              <p className="text-gray-500">T-shirt with Tape Details</p>
+              <p className="text-gray-500">Rating 4.5/5</p>
+              <p className="text-gray-500 text-lg font-bold">$120</p>
+            </div>
+          </Link>
         </div>
         <div className="flex max-sm:w-[30rem] flex-col justify-center">
           <div className="rounded-xl flex items-center justify-center bg-[#f0eeed]">

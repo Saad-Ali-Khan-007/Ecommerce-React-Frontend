@@ -4,6 +4,7 @@ import Footer from "./components/footer/Footer";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Register from "./pages/Register";
+import Signin from "./pages/Signin";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         ></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/login" element={<Signin />}></Route>
       </Routes>
       <Footer />
     </div>

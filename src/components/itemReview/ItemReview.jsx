@@ -11,7 +11,7 @@ const ItemReview = () => {
         <button>Write a Review</button>
       </div>
       <div className="flex flex-wrap justify-between">
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4 border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -27,7 +27,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%]  w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -43,7 +43,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -59,7 +59,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -75,7 +75,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -91,7 +91,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -107,7 +107,7 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
-        <div className="flex w-[32%]  border-2 p-6 rounded-xl flex-col">
+        <div className="flex max-md:w-[50%] max-sm:w-[100%] w-[32%] mb-4  border-2 p-6 rounded-xl flex-col">
           <p className="flex mb-2">
             <img src={Star1} alt="" />
             <img src={Star1} alt="" />
@@ -123,6 +123,11 @@ const ItemReview = () => {
             magni vero soluta?
           </p>
         </div>
+      </div>
+      <div className="flex justify-center items-center">
+        <button className="border font-semibold w-[10rem] p-3 rounded-full">
+          View All
+        </button>
       </div>
     </div>
   );

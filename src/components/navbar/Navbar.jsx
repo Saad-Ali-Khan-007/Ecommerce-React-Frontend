@@ -54,7 +54,9 @@ const Navbar = () => {
           <Link to="/cart">
             <img src={logo} alt="cart" />
           </Link>
-          <img src={profile} alt="profile" />
+          <Link to="/register">
+            <img src={profile} alt="profile" />
+          </Link>
         </div>
       </div>
       {isOpen && (

@@ -3,6 +3,7 @@ import { useState } from "react";
 import logo from "../../assets/logo.png";
 import profile from "../../assets/profile.png";
 import { IoMdMenu } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,8 +51,10 @@ const Navbar = () => {
           </button>
         </div>
         <div className="flex gap-4">
-          <img src={logo} alt="" />
-          <img src={profile} alt="" />
+          <Link to="/cart">
+            <img src={logo} alt="cart" />
+          </Link>
+          <img src={profile} alt="profile" />
         </div>
       </div>
       {isOpen && (

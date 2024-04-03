@@ -6,7 +6,9 @@ import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const Menu = ["Profile", "Login", "Logout"];
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -21,18 +23,10 @@ const Navbar = () => {
         </div>
         <div>
           <ul className="flex max-lg:hidden  font-alonica font-[18px] gap-[1.5rem]">
-            <li>
-              <select name="shop" id="shop">
-                <option className=" bg-gray-100" value="Shop">
-                  Shop
-                </option>
-                <option value="Men">Men</option>
-                <option value="Women">Women</option>
-                <option value="Kids">Kids</option>
-                <option value="Senior">Senior</option>
-              </select>
-            </li>
-            <li>On Sale</li>
+            <Link to="/">
+              <li>Home</li>
+            </Link>
+            <li>Seller</li>
             <li>New Arrivals</li>
             <li>Brands</li>
           </ul>
@@ -50,13 +44,34 @@ const Navbar = () => {
             {isOpen ? "X" : <IoMdMenu />}
           </button>
         </div>
-        <div className="flex gap-4">
-          <Link to="/cart">
-            <img src={logo} alt="cart" />
-          </Link>
-          <Link to="/register">
-            <img src={profile} alt="profile" />
-          </Link>
+        <div className="relative">
+          <div className="flex gap-4">
+            <Link to="/cart">
+              <img src={logo} alt="cart" />
+            </Link>
+            <Link to="/register">
+              <img
+                onClick={() => setDropdown(!dropdown)}
+                src={profile}
+                alt="profile"
+              />
+            </Link>
+          </div>
+          {dropdown && (
+            <div className="bg-white p-4 w-40 shadow-lg absolute -left-14 top-10">
+              <ul>
+                {Menu.map((menu) => (
+                  <li
+                    onClick={() => setDropdown(!dropdown)}
+                    className="p-2 text-md cursor-pointer rounded hover:bg-blue-100"
+                    id={menu}
+                  >
+                    {menu}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
       {isOpen && (

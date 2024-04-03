@@ -6,6 +6,7 @@ import Cart from "./pages/Cart";
 import Register from "./pages/Register";
 import Signin from "./pages/Signin";
 import Seller from "./pages/vendor/Seller";
+import SellerAddProduct from "./pages/vendor/SellerAddProduct";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -22,6 +23,10 @@ const App = () => {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Signin />}></Route>
         <Route path="/seller" element={<Seller />}></Route>
+        <Route
+          path="/seller/add-product"
+          element={<SellerAddProduct />}
+        ></Route>
       </Routes>
       <Footer />
     </div>

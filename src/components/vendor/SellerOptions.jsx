@@ -2,6 +2,7 @@ import React from "react";
 import add from "../../assets/add.png";
 import product from "../../assets/products.png";
 import edit from "../../assets/edit.png";
+import { Link } from "react-router-dom";
 const cardData = [
   {
     id: 1,
@@ -25,17 +26,19 @@ const SellerOptions = () => {
     <div className="mt-16 m-auto max-w-[90%]">
       <div className="flex justify-around items-center flex-wrap">
         {cardData.map((data) => (
-          <div
-            className="flex mb-4 flex-col gap-2 items-center justify-between bg-gray-100 p-10"
-            key={data.id}
-          >
-            <div>
-              <img src={data.img} width={200} alt="" />
+          <Link to="/seller/add-product">
+            <div
+              className="flex mb-4 flex-col gap-2 items-center justify-between bg-gray-100 p-10"
+              key={data.id}
+            >
+              <div>
+                <img src={data.img} width={200} alt="" />
+              </div>
+              <div>
+                <p className="text-lg">{data.text}</p>
+              </div>
             </div>
-            <div>
-              <p className="text-lg">{data.text}</p>
-            </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

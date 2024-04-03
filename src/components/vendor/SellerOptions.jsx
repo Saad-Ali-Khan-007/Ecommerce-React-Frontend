@@ -8,6 +8,7 @@ const cardData = [
     id: 1,
     img: add,
     text: "Add Product",
+    to: "/seller/add-product",
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ const SellerOptions = () => {
     <div className="mt-16 m-auto max-w-[90%]">
       <div className="flex justify-around items-center flex-wrap">
         {cardData.map((data) => (
-          <Link to="/seller/add-product">
+          <Link key={data.id} to={data.to}>
             <div
               className="flex mb-4 flex-col gap-2 items-center justify-between bg-gray-100 p-10"
               key={data.id}

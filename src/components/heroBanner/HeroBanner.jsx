@@ -4,7 +4,7 @@ import herobanner from "../../assets/herobanner.png";
 
 const HeroBanner = () => {
   return (
-    <div className="flex m-auto max-md:flex-wrap   mt-24 max-w-[90%] items-center justify-between">
+    <div className="flex m-auto max-md:flex-wrap max-sm:mt-10  mt-24 max-w-[90%] items-center justify-between">
       <div className="m-auto flex flex-col max-lg:items-center lg:max-w-[100%]">
         <div className="flex flex-col max-lg:items-center justify-between">
           <h1 className="max-lg:text-center font-aclonica lg:text-[4rem] font-extrabold leading-[3.5rem] text-[2.65rem]">

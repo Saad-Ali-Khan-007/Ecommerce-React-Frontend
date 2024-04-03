@@ -79,10 +79,12 @@ const Navbar = () => {
       {isOpen && (
         <div>
           <ul className="flex bg-gray-100  flex-col  items-center justify-center  font-alonica font-[18px] gap-[1.5rem]">
-            <li className="hover:bg-gray-300 w-full text-center p-1">Shop</li>
-            <li className="hover:bg-gray-300 w-full text-center p-1">
-              On Sale
-            </li>
+            <Link onClick={toggleNavbar} to="/">
+              <li>Home</li>
+            </Link>
+            <Link onClick={toggleNavbar} to="/seller">
+              <li>Seller</li>
+            </Link>
             <li className="hover:bg-gray-300 w-full text-center p-1">
               New Arrivals
             </li>

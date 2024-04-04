@@ -7,6 +7,7 @@ import Register from "./pages/Register";
 import Signin from "./pages/Signin";
 import Seller from "./pages/vendor/Seller";
 import SellerAddProduct from "./pages/vendor/SellerAddProduct";
+import SellerProduct from "./pages/vendor/SellerProduct";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
           path="/seller/add-product"
           element={<SellerAddProduct />}
         ></Route>
+        <Route path="/seller/product" element={<SellerProduct />}></Route>
       </Routes>
       <Footer />
     </div>

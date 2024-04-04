@@ -1,7 +1,7 @@
 import React from "react";
 import add from "../../assets/add.png";
 import product from "../../assets/products.png";
-import edit from "../../assets/edit.png";
+import customer from "../../assets/customer.png";
 import { Link } from "react-router-dom";
 const cardData = [
   {
@@ -14,11 +14,12 @@ const cardData = [
     id: 2,
     img: product,
     text: "All Product",
+    to: "/seller/product",
   },
   {
     id: 3,
-    img: edit,
-    text: "Edit Product",
+    img: customer,
+    text: "Customers",
   },
 ];
 

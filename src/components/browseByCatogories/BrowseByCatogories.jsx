@@ -3,6 +3,7 @@ import technology from "../../assets/technology.png";
 import clothes from "../../assets/clothes.png";
 import grocery from "../../assets/grocery.png";
 import crockery from "../../assets/crockery.png";
+import { Link } from "react-router-dom";
 
 const BrowseByCatogories = () => {
   return (
@@ -26,16 +27,20 @@ const BrowseByCatogories = () => {
               />
             </div>
           </div>
-          <div className="flex ml-4 w-[140rem] mt-4 max-md:w-[100%] max-md:ml-0 h-[20rem]  items-center justify-evenly rounded-3xl bg-white">
+          <Link
+            to="/clothes/casual"
+            className="flex ml-4 w-[140rem] mt-4 max-md:w-[100%] max-md:ml-0 h-[20rem]  items-center justify-evenly rounded-3xl bg-white"
+          >
             <div>
               <p className="text-gray-500 pl-2 max-sm:text-[1.5rem] font-aclonica font-extrabold text-[2rem]">
                 Clothes
               </p>
             </div>
+
             <div>
               <img className="w-[20.875rem]" src={clothes} alt="" />
             </div>
-          </div>
+          </Link>
         </div>
         <div className="flex justify-between max-md:w-[100%] max-md:flex-wrap items-center mt-4">
           <div className="flex w-[140rem] h-[20rem] items-center justify-evenly rounded-3xl bg-white">

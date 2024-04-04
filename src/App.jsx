@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/footer/Footer";
@@ -9,7 +10,8 @@ import Seller from "./pages/vendor/Seller";
 import SellerAddProduct from "./pages/vendor/SellerAddProduct";
 import SellerProduct from "./pages/vendor/SellerProduct";
 import SellerCustomer from "./pages/vendor/SellerCustomer";
-import { Route, Routes } from "react-router-dom";
+import Clothes from "./pages/Clothes";
+import FilteredClothes from "./components/clothes/FilteredClothes";
 
 const App = () => {
   return (
@@ -31,6 +33,9 @@ const App = () => {
         ></Route>
         <Route path="/seller/product" element={<SellerProduct />}></Route>
         <Route path="/seller/customer" element={<SellerCustomer />}></Route>
+        <Route path="/clothes" element={<Clothes />}>
+          <Route path=":category_slug" element={<FilteredClothes />}></Route>
+        </Route>
       </Routes>
       <Footer />
     </div>

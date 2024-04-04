@@ -8,6 +8,7 @@ import Signin from "./pages/Signin";
 import Seller from "./pages/vendor/Seller";
 import SellerAddProduct from "./pages/vendor/SellerAddProduct";
 import SellerProduct from "./pages/vendor/SellerProduct";
+import SellerCustomer from "./pages/vendor/SellerCustomer";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
           element={<SellerAddProduct />}
         ></Route>
         <Route path="/seller/product" element={<SellerProduct />}></Route>
+        <Route path="/seller/customer" element={<SellerCustomer />}></Route>
       </Routes>
       <Footer />
     </div>

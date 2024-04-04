@@ -20,6 +20,7 @@ const cardData = [
     id: 3,
     img: customer,
     text: "Customers",
+    to: "/seller/customer",
   },
 ];
 

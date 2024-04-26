@@ -4,14 +4,30 @@ import logo from "../../assets/logo.png";
 import profile from "../../assets/profile.png";
 import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { signout } from "../../reduxFeatures/Seller";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const Menu = ["Profile", "Login", "Logout"];
+  const seller = useSelector((state) => state.seller);
+  const dispatch = useDispatch();
+  console.log(seller);
+  const Menu = [
+    { name: "Profile", href: "#" },
+
+    Object.keys(seller).length == 0
+      ? { name: "Login", href: "/login" }
+      : { name: "Logout", href: "/login" },
+  ];
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
+  };
+  const handleLogout = () => {
+    setDropdown(!dropdown);
+    dispatch(signout());
   };
   return (
     <>
@@ -51,7 +67,7 @@ const Navbar = () => {
             <Link to="/cart">
               <img src={logo} alt="cart" />
             </Link>
-            <Link to="/register">
+            <Link to="">
               <img
                 onClick={() => setDropdown(!dropdown)}
                 src={profile}
@@ -63,13 +79,25 @@ const Navbar = () => {
             <div className="bg-white p-4 w-40 shadow-lg absolute -left-14 top-10">
               <ul>
                 {Menu.map((menu) => (
-                  <li
-                    onClick={() => setDropdown(!dropdown)}
-                    className="p-2 text-md cursor-pointer rounded hover:bg-blue-100"
-                    id={menu}
-                  >
-                    {menu}
-                  </li>
+                  <Link to={menu.href} key={menu.name}>
+                    {menu.name == "Logout" ? (
+                      <li
+                        onClick={handleLogout}
+                        className="p-2 text-md cursor-pointer rounded hover:bg-blue-100"
+                        id={menu}
+                      >
+                        {menu.name}
+                      </li>
+                    ) : (
+                      <li
+                        onClick={() => setDropdown(!dropdown)}
+                        className="p-2 text-md cursor-pointer rounded hover:bg-blue-100"
+                        id={menu}
+                      >
+                        {menu.name}
+                      </li>
+                    )}
+                  </Link>
                 ))}
               </ul>
             </div>

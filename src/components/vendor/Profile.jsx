@@ -152,14 +152,6 @@ const Profile = () => {
           Update
         </button>
       </form>
-      <div className="flex flex-col items-center mb-16">
-        <p>
-          Already have an account ?{" "}
-          <Link to="/login" className="text-gray-500">
-            Log in
-          </Link>
-        </p>
-      </div>
     </div>
   );
 };

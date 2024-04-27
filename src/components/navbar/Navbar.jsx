@@ -68,13 +68,22 @@ const Navbar = () => {
             <Link to="/cart">
               <img src={logo} alt="cart" />
             </Link>
-            <Link>
+            {seller.img ? (
+              <Link>
+                <img
+                  className="rounded-full w-[36px]"
+                  onClick={() => setDropdown(!dropdown)}
+                  src={seller.img}
+                  alt="profile"
+                />
+              </Link>
+            ) : (
               <img
                 onClick={() => setDropdown(!dropdown)}
                 src={profile}
                 alt="profile"
               />
-            </Link>
+            )}
           </div>
           {dropdown && (
             <div className="bg-white p-4 w-40 shadow-lg absolute -left-14 top-10">

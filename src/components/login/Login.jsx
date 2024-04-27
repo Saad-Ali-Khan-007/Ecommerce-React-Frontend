@@ -27,7 +27,7 @@ const Login = () => {
     _formData.append("password", sellerData.password);
     try {
       const response = await axios.post(LOGIN_URL, _formData);
-      if (response.data.bool == true) {
+      if (response.data.bool !== false) {
         localStorage.setItem("seller", JSON.stringify(response.data));
         dispatch(login(response.data));
         navigate("/seller");

@@ -14,7 +14,7 @@ export const sellerSlice = createSlice({
     login: (state, action) => {
       state = action.payload;
     },
-    setUser: (state, action) => {
+    setSeller: (state, action) => {
       console.log("inside reducer", action.payload);
       state = action.payload;
       console.log("seller", state);
@@ -25,5 +25,5 @@ export const sellerSlice = createSlice({
   },
 });
 
-export const { login, signout, setUser } = sellerSlice.actions;
+export const { login, signout, setSeller } = sellerSlice.actions;
 export default sellerSlice.reducer;

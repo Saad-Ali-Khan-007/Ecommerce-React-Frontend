@@ -13,8 +13,9 @@ const Navbar = () => {
   const dispatch = useDispatch();
   console.log(seller);
   const Menu = [
-    { name: "Profile", href: "#" },
-
+    Object.keys(seller).length == 0
+      ? { name: "Register", href: "/register" }
+      : { name: "Profile", href: "/seller-profile" },
     Object.keys(seller).length == 0
       ? { name: "Login", href: "/login" }
       : { name: "Logout", href: "/login" },
@@ -67,7 +68,7 @@ const Navbar = () => {
             <Link to="/cart">
               <img src={logo} alt="cart" />
             </Link>
-            <Link to="">
+            <Link>
               <img
                 onClick={() => setDropdown(!dropdown)}
                 src={profile}

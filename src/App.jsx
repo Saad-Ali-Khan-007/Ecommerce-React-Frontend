@@ -12,6 +12,7 @@ import SellerProduct from "./pages/vendor/SellerProduct";
 import SellerCustomer from "./pages/vendor/SellerCustomer";
 import Clothes from "./pages/Clothes";
 import FilteredClothes from "./components/clothes/FilteredClothes";
+import SellerProfile from "./pages/vendor/SellerProfile";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/login" element={<Signin />}></Route>
         <Route path="/seller" element={<Seller />}></Route>
+        <Route path="/seller-profile" element={<SellerProfile />}></Route>
         <Route
           path="/seller/add-product"
           element={<SellerAddProduct />}

@@ -4,21 +4,13 @@ import logo from "../../assets/logo.png";
 import profile from "../../assets/profile.png";
 import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { signout } from "../../reduxFeatures/Seller";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 
 const Navbar = () => {
-  const seller = useSelector((state) => state.seller);
-  const dispatch = useDispatch();
-  console.log(seller);
   const Menu = [
-    Object.keys(seller).length == 0
-      ? { name: "Register", href: "/register" }
-      : { name: "Profile", href: "/seller-profile" },
-    Object.keys(seller).length == 0
-      ? { name: "Login", href: "/login" }
-      : { name: "Logout", href: "/login" },
+    { name: "Register", href: "/register" },
+    { name: "Profile", href: "/seller-profile" },
+    { name: "Login", href: "/login" },
+    { name: "Logout", href: "/login" },
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -28,7 +20,6 @@ const Navbar = () => {
   };
   const handleLogout = () => {
     setDropdown(!dropdown);
-    dispatch(signout());
   };
   return (
     <>
@@ -68,22 +59,12 @@ const Navbar = () => {
             <Link to="/cart">
               <img src={logo} alt="cart" />
             </Link>
-            {seller.img ? (
-              <Link>
-                <img
-                  className="rounded-full w-[36px]"
-                  onClick={() => setDropdown(!dropdown)}
-                  src={seller.img}
-                  alt="profile"
-                />
-              </Link>
-            ) : (
-              <img
-                onClick={() => setDropdown(!dropdown)}
-                src={profile}
-                alt="profile"
-              />
-            )}
+
+            <img
+              onClick={() => setDropdown(!dropdown)}
+              src={profile}
+              alt="profile"
+            />
           </div>
           {dropdown && (
             <div className="bg-white p-4 w-40 shadow-lg absolute -left-14 top-10">

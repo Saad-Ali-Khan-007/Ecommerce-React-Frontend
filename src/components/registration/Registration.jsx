@@ -1,48 +1,6 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "../../api/axios";
-
-const SIGNUP_URL = "api/seller/";
+import { Link } from "react-router-dom";
 
 const Registration = () => {
-  const navigate = useNavigate();
-  const [sellerData, setSellerData] = useState({
-    name: "",
-    contact: "",
-    email: "",
-    password: "",
-    status: "",
-  });
-  const handleChange = (e) => {
-    setSellerData({
-      ...sellerData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const _formData = new FormData();
-    _formData.append("name", sellerData.name);
-    _formData.append("contact", sellerData.contact);
-    _formData.append("email", sellerData.email);
-    _formData.append("password", sellerData.password);
-    try {
-      const response = await axios.post(SIGNUP_URL, _formData);
-      setSellerData({
-        name: "",
-        contact: "",
-        email: "",
-        password: "",
-        status: "success",
-      });
-      console.log(response.data);
-      navigate("/login");
-    } catch (err) {
-      console.log("Registration Failed");
-    }
-  };
-
   return (
     <div className="flex flex-col items-center  justify-center gap-6">
       <div className="flex flex-col items-center">
@@ -61,35 +19,28 @@ const Registration = () => {
         <input
           type="text"
           name="name"
-          onChange={handleChange}
           className="p-3 rounded-md bg-gray-100 focus:outline-gray-500"
         />
         <label>Contact</label>
         <input
           type="text"
           name="contact"
-          onChange={handleChange}
           className="p-3 rounded-md bg-gray-100 focus:outline-gray-500"
         />
         <label>Email</label>
         <input
           type="email"
           name="email"
-          onChange={handleChange}
           className="p-3 rounded-md bg-gray-100 focus:outline-gray-500"
         />
         <label>Password</label>
         <input
           type="password"
           name="password"
-          onChange={handleChange}
           className="p-3 rounded-md bg-gray-100 focus:outline-gray-500"
         />
 
-        <button
-          onClick={handleSubmit}
-          className="bg-black text-white p-3 rounded-md mt-4 w-[100%]"
-        >
+        <button className="bg-black text-white p-3 rounded-md mt-4 w-[100%]">
           Register
         </button>
       </form>

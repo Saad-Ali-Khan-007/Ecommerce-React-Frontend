@@ -4,13 +4,14 @@ import logo from "../../assets/logo.png";
 import profile from "../../assets/profile.png";
 import { IoMdMenu } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { logout } from "../../api/auth";
 
 const Navbar = () => {
   const Menu = [
-    { name: "Register", href: "/register" },
+    { name: "Register", href: "/register/" },
     { name: "Profile", href: "/seller-profile" },
-    { name: "Login", href: "/login" },
-    { name: "Logout", href: "/login" },
+    { name: "Login", href: "/login/" },
+    { name: "Logout", href: "/login/" },
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
@@ -19,6 +20,8 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   const handleLogout = () => {
+    logout();
+    alert("You have been logged out");
     setDropdown(!dropdown);
   };
   return (

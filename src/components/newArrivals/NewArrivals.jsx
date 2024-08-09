@@ -17,7 +17,7 @@ const NewArrivals = ({ product }) => {
             key={index}
             className="flex max-sm:w-[30rem] w-[18rem] flex-col justify-center"
           >
-            <Link to="/product-detail/1">
+            <Link to={`/product-detail/${item.slug}/`}>
               <div className="rounded-xl w-[295px] max-sm:w-[98%]  h-[298px] flex items-center justify-center bg-[#f0eeed]">
                 <img src={item.image} alt="" />
               </div>

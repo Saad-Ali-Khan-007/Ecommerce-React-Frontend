@@ -9,6 +9,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 // Base Routes
 import Home from "./pages/Home";
+import ProductDetail from "./pages/ProductDetail";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/create-new-password/" element={<CreatePassword />} />
           //Base Routes
           <Route path="/" element={<Home />} />
+          <Route path="/product-detail/:slug/" element={<ProductDetail />} />
         </Routes>
         <Footer />
       </MainWrapper>

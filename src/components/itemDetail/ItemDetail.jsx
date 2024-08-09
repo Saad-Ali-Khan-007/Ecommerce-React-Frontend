@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import Rater from "react-rater";
+import "react-rater/lib/react-rater.css";
 import Star1 from "../../assets/Star1.svg";
 import Ellipse from "../../assets/Ellipse.svg";
 const imgs = [
@@ -25,18 +26,18 @@ const imgs = [
   },
 ];
 
-const ItemDetail = () => {
+const ItemDetail = ({ product }) => {
   const [sliderData, setSliderData] = useState(imgs[0]);
-  const handleClick = (index) => {
-    const slider = imgs[index];
-    setSliderData(slider);
-  };
+  // const handleClick = (index) => {
+  //   const slider = imgs[index];
+  //   setSliderData(slider);
+  // };
 
   return (
     <div className="mt-10 border-t-4 pt-8 m-auto max-w-[90%]">
       <div className="flex gap-6 max-lg:flex-wrap">
         <div className="flex gap-3 ">
-          <div className="flex flex-col gap-4">
+          {/* <div className="flex flex-col gap-4">
             {imgs.map((data, i) => (
               <img
                 className={sliderData.id == i ? "border-2 border-black" : ""}
@@ -48,51 +49,27 @@ const ItemDetail = () => {
                 width="200"
               />
             ))}
-          </div>
+          </div> */}
           <div>
-            <img src={sliderData.value} alt="" height="800" width="1000" />
+            <img src={product.image} alt="" height="800" width="1000" />
           </div>
         </div>
         <div className="flex ">
           <div className="flex flex-col justify-between gap-4">
-            <h1 className=" font-extrabold text-[2rem] ">
-              ONE LIFE GRAPHIC TSHIRT
-            </h1>
-            <p className="flex">
-              <img src={Star1} alt="" />
-              <img src={Star1} alt="" />
-              <img src={Star1} alt="" />
-              <img src={Star1} alt="" />
-              <img src={Star1} alt="" />
-            </p>
-            <h2 className="text-[1.5rem] font-bold">260$</h2>
-            <p className="border-b-2 pb-4">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet,
-              amet ut nemo velit cumque quam necessitatibus! Quibusdam, sint
-              voluptas asperiores eos tenetur quas reprehenderit dolores vero
-              placeat? Numquam, debitis maxime.
-            </p>
-            <p>Select Colors</p>
-            <p className="flex gap-4 border-b-2 pb-6">
-              <img src={Ellipse} alt="" />
-              <img src={Ellipse} alt="" />
-              <img src={Ellipse} alt="" />
-            </p>
-            <p>Choose Size</p>
-            <div className="flex gap-4">
-              <button className="bg-gray-200 max-sm:p-1 max-sm:pl-2 max-sm:pr-2 max-md:p-2 max-md:pl-4 max-md:pr-4 p-3 pl-6 pr-6 rounded-full">
-                Small
-              </button>
-              <button className="bg-gray-200 max-sm:p-1 max-sm:pl-2 max-sm:pr-2 max-md:p-2 max-md:pl-4 max-md:pr-4 p-3 pl-6 pr-6 rounded-full">
-                Medium
-              </button>
-              <button className="bg-gray-200 max-sm:p-1 max-sm:pl-2 max-sm:pr-2 max-md:p-2 max-md:pl-4 max-md:pr-4 p-3 pl-6 pr-6 rounded-full">
-                Large
-              </button>
-              <button className="bg-gray-200 max-sm:p-1 max-sm:pl-3 max-sm:pr-3 max-md:p-2 max-md:pl-4 max-md:pr-4 p-3 pl-6 pr-6 rounded-full">
-                X-Large
-              </button>
+            <h1 className=" font-extrabold text-[2rem] ">{product.title}</h1>
+            <div className="flex">
+              <Rater total={5} rating={product.average_rating} />
             </div>
+            <h2 className="text-[1.5rem] font-bold">{product.price}$</h2>
+            <p className="border-b-2 pb-4">{product.description}</p>
+            <p className="text-[1.5rem] font-bold">Seller</p>
+            <p className="flex gap-4 border-b-2 pb-6">
+              {product.seller.full_name}
+            </p>
+            <p className="text-[1.5rem] font-bold">Condition</p>
+
+            <p className="flex gap-4 text-green-600 pb-6">{product.level}</p>
+
             <button className="bg-black w-[55%] text-white p-3 pl-6 pr-6 rounded-full">
               Add to Cart
             </button>
